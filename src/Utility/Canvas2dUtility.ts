@@ -5,13 +5,17 @@ export function get2dContext(canvas: HTMLCanvasElement, options?: CanvasRenderin
     return ctx;
 }
 
-export function generateDebugImage(callback: (x: number, y: number) => [number, number, number]) {
+export function generateDebugImage(
+    width: number,
+    height: number,
+    callback: (x: number, y: number) => [number, number, number],
+) {
     const canvas = document.createElement("canvas");
     canvas.style.zoom = "2";
     canvas.style.imageRendering = "pixelated";
     document.body.appendChild(canvas);
-    canvas.width = 100;
-    canvas.height = 100;
+    canvas.width = width;
+    canvas.height = height;
     const ctx = canvas.getContext("2d")!;
 
     const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
