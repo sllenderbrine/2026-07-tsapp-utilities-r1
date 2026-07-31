@@ -1,6 +1,6 @@
+import { Mat4 } from "../Matrices/Mat4.js";
 import { degreesToRadians } from "../Utility/MathUtility.js";
 import { Vec3 } from "../Vectors/Vec3.js";
-import * as Mat4 from "../Matrices/Mat4.js";
 
 export class ShaderCamera3D {
     aspect: number;
