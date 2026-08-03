@@ -59,6 +59,13 @@ export class DynamicTypedArray<T extends TypedArray> {
         return ++this.length;
     }
 
+    pushElements(...arr: number[]): number {
+        for(let n of arr) {
+            this.push(n);
+        }
+        return this.length;
+    }
+
     pushArray(values: T): void {
         if (this.length + values.length > this.capacity) {
             this.setCapacity(
